@@ -7,7 +7,7 @@ extern int NO;
 
 
 
-struct distance_table 
+struct distance_table
 {
   int costs[4][4];
 } dt1;
@@ -18,6 +18,11 @@ struct distance_table
 
 void rtinit1()
 {
+    // fill own table with values
+    dt1.costs[1][0] = 1;
+    dt1.costs[1][1] = 0;
+    dt1.costs[1][2] = 1;
+    dt1.costs[1][3] = 999;
 
 }
 
@@ -32,7 +37,7 @@ void rtupdate1(struct rtpkt *rcvdpkt)
 
 void printdt1(struct distance_table *dtptr)
 
-  
+
 {
   printf("             via   \n");
   printf("   D1 |    0     2 \n");
@@ -51,7 +56,7 @@ void linkhandler1(int linkid, int newcost)
 /* You can leave this routine empty if you're an undergrad. If you want */
 /* to use this routine, you'll need to change the value of the LINKCHANGE */
 /* constant definition in prog3.c from 0 to 1 */
-	
+
 {
 }
 
