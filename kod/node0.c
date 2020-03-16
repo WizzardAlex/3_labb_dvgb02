@@ -30,10 +30,13 @@ void rtinit0()
     }
 
     // init row to send
-    int mcost[4] = {0, 1, 3, 7};
     struct rtpkt pkt;
     pkt.sourceid = 0;
     pkt.destid= 0;
+    pkt.mincost[0] = 0;
+    pkt.mincost[1] = 1;
+    pkt.mincost[2] = 3;
+    pkt.mincost[3] = 7;
    
     int i;
     for (i=1; i < 3; i++){ // send to all neighbors
