@@ -21,8 +21,16 @@ void rtinit0()
     dt0.costs[0][2] = 3;
     dt0.costs[0][3] = 7;
 
+    int k;
+    int j;
+    for (k=1; k < 3; k++){ // initialize unkown values
+        for (j=0; j < 3; j++){
+            dt0.costs[k][j] = 999;
+        }
+    }
+
     // init row to send
-    int mcost[4] = {0, 1, 3 7};
+    int mcost[4] = {0, 1, 3, 7};
     struct rtpkt pkt;
     pkt.sourceid = 0;
     pkt.destid= 0;
