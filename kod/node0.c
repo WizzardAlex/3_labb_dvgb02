@@ -15,7 +15,23 @@ struct distance_table
 
 void rtinit0() 
 {
+    // fill own table with values
+    dt0.costs[0][0] = 0;
+    dt0.costs[0][1] = 1;
+    dt0.costs[0][2] = 3;
+    dt0.costs[0][3] = 7;
 
+    // init row to send
+    int mcost[4] = {0, 1, 3 7};
+    struct rtpkt pkt;
+    pkt.sourceid = 0;
+    pkt.destid= 0;
+   
+    int i;
+    for (i=1; i < 3; i++){ // send to all neighbors
+        pkt.destid = i;
+        tolayer2(pkt);
+    }
 }
 
 
