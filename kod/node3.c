@@ -4,21 +4,26 @@ extern int TRACE;
 extern int YES;
 extern int NO;
 
-struct distance_table 
+struct distance_table
 {
   int costs[4][4];
 } dt3;
 
 /* students to write the following two routines, and maybe some others */
 
-void rtinit3() 
+void rtinit3()
 {
+
+    dt3.costs[3][0] = 7;
+    dt3.costs[3][1] = 999;
+    dt3.costs[3][2] = 2;
+    dt3.costs[3][3] = 0;
 }
 
 
 void rtupdate3(struct rtpkt *rcvdpkt)
 
-  
+
 {
 
 }
@@ -26,7 +31,7 @@ void rtupdate3(struct rtpkt *rcvdpkt)
 
 void printdt3(struct distance_table *dtptr)
 
-  
+
 {
   printf("             via     \n");
   printf("   D3 |    0     2 \n");
