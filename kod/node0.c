@@ -5,7 +5,7 @@ extern int TRACE;
 extern int YES;
 extern int NO;
 
-struct distance_table 
+struct distance_table
 {
   int costs[4][4];
 } dt0;
@@ -13,7 +13,7 @@ struct distance_table
 
 /* students to write the following two routines, and maybe some others */
 
-void rtinit0() 
+void rtinit0()
 {
     // fill own table with values
     dt0.costs[0][0] = 0;
@@ -37,7 +37,7 @@ void rtinit0()
     pkt.mincost[1] = 1;
     pkt.mincost[2] = 3;
     pkt.mincost[3] = 7;
-   
+
     int i;
     for (i=1; i < 3; i++){ // send to all neighbors
         pkt.destid = i;
@@ -47,15 +47,22 @@ void rtinit0()
 
 
 void rtupdate0(struct rtpkt *rcvdpkt)
-  
+
 {
+    int i, j,src;
+    src = rcvdpkt->sourceid;
+    for(i=0;i<4;i++){
+
+
+
+
 
 }
 
 
 void printdt0(struct distance_table *dtptr)
 
-  
+
 {
   printf("                via     \n");
   printf("   D0 |    1     2    3 \n");
@@ -75,7 +82,7 @@ void linkhandler0(int linkid, int newcost)
 /* You can leave this routine empty if you're an undergrad. If you want */
 /* to use this routine, you'll need to change the value of the LINKCHANGE */
 /* constant definition in prog3.c from 0 to 1 */
-	
+
 {
 }
 
