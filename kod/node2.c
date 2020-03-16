@@ -19,6 +19,34 @@ void rtinit2()
     dt2.costs[2][1] = 1;
     dt2.costs[2][2] = 0;
     dt2.costs[2][3] = 2;
+    int node = 2;
+
+    int k;
+    int j;
+    for (k=0; k < 3; k++){ // initialize unkown values
+		if (k != node){ // skips own row
+			for (j=0; j < 3; j++){
+				dt0.costs[k][j] = 999;
+			}
+		}
+    }
+
+    // init row to send
+    struct rtpkt pkt;
+    pkt.sourceid = node;
+    pkt.destid= 0;
+    pkt.mincost[0] = 3;
+    pkt.mincost[1] = 1;
+    pkt.mincost[2] = 0;
+    pkt.mincost[3] = 2;
+   
+    int i;
+    for (i=0; i < 3; i++){ // send to all neighbors
+		if (i != node){
+			pkt.destid = i;
+			tolayer2(pkt);
+		}
+	}
 }
 
 
