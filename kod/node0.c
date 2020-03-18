@@ -17,17 +17,19 @@ struct distance_table
 void rtinit0()
 {
     // fill own table with values
-    dt0.costs[1][1] = 1;
-    dt0.costs[2][2] = 3;
-    dt0.costs[3][3] = 7;
+
+    dt0 dist_table;
 
     int k;
     int j;
-    for (k=1; k < 3; k++){ // initialize unkown values
+    for (k=0; k < 3; k++){ // initialize unkown values
         for (j=0; j < 3; j++){
-	    if(k!=j)	dt0.costs[k][j] = 999;
+            dist_table.costs[k][j] = 999;
         }
     }
+    dist_table.costs[1][1] = 1;
+    dist_table.costs[2][2] = 3;
+    dist_table.costs[3][3] = 7;
 
     // init row to send
     struct rtpkt pkt;
