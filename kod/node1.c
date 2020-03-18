@@ -7,13 +7,13 @@ extern int NO;
 
 
 
-void printdist_table1(struct distance_table *dtptr);
 struct distance_table
 {
   int costs[4][4];
 } dt1;
 
-dist_table1 dist_table1;
+void printdist_table1(struct distance_table *dtptr);
+struct distance_table dist_table1;
 /* students to write the following two routines, and maybe some others */
 
 

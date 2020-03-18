@@ -5,14 +5,15 @@ extern int TRACE;
 extern int YES;
 extern int NO;
 
-void printdt0(struct distance_table *dtptr);
 struct distance_table
 {
   int costs[4][4];
 } dt0;
 
 
-dt0 dist_table0;
+void printdt0(struct distance_table *dtptr);
+
+struct distance_table dist_table0;
 /* students to write the following two routines, and maybe some others */
 
 void rtinit0()

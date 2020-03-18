@@ -5,13 +5,13 @@ extern int TRACE;
 extern int YES;
 extern int NO;
 
-void printdist_table2(struct distance_table *dtptr);
 struct distance_table
 {
   int costs[4][4];
 } dt2;
 
-dist_table2 dist_table2;
+void printdist_table2(struct distance_table *dtptr);
+struct distance_table dist_table2;
 /* students to write the following two routines, and maybe some others */
 
 void rtinit2()
