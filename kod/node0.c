@@ -5,6 +5,7 @@ extern int TRACE;
 extern int YES;
 extern int NO;
 
+void printdt0(struct distance_table *dtptr);
 struct distance_table
 {
   int costs[4][4];
@@ -42,20 +43,13 @@ void rtinit0()
         pkt.destid = i;
         tolayer2(pkt);
     }
+    printdt0(&dt0);
 }
 
 
 void rtupdate0(struct rtpkt *rcvdpkt)
 
 {
-    int i, j,src;
-    src = rcvdpkt->sourceid;
-    for(i=0;i<4;i++){
-
-
-
-
-
 }
 
 

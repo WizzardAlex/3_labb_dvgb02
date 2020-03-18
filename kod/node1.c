@@ -7,6 +7,7 @@ extern int NO;
 
 
 
+void printdt1(struct distance_table *dtptr);
 struct distance_table
 {
   int costs[4][4];
@@ -30,7 +31,7 @@ void rtinit1()
     for (k=0; k < 3; k++){ // initialize unkown values
 		if (k != node){ // skips own row
 			for (j=0; j < 3; j++){
-				if(k!=j)	dt0.costs[k][j] = 999;
+				if(k!=j)	dt1.costs[k][j] = 999;
 			}
 		}
     }
@@ -51,6 +52,7 @@ void rtinit1()
 			tolayer2(pkt);
 		}
 	}
+    printdt1(&dt1);
 }
 
 
