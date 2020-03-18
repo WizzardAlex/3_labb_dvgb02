@@ -7,22 +7,22 @@ extern int NO;
 
 
 
-void printdt1(struct distance_table *dtptr);
+void printdist_table1(struct distance_table *dtptr);
 struct distance_table
 {
   int costs[4][4];
 } dt1;
 
-
+dist_table1 dist_table1;
 /* students to write the following two routines, and maybe some others */
 
 
 void rtinit1()
 {
     // fill own table with values
-    dt1.costs[0][0] = 1;
-    dt1.costs[2][2] = 1;
-    dt1.costs[3][3] = 999;
+    dist_table1.costs[0][0] = 1;
+    dist_table1.costs[2][2] = 1;
+    dist_table1.costs[3][3] = 999;
 
 	int node = 1;
 
@@ -31,7 +31,7 @@ void rtinit1()
     for (k=0; k < 3; k++){ // initialize unkown values
 		if (k != node){ // skips own row
 			for (j=0; j < 3; j++){
-				if(k!=j)	dt1.costs[k][j] = 999;
+				if(k!=j)	dist_table1.costs[k][j] = 999;
 			}
 		}
     }
@@ -52,7 +52,7 @@ void rtinit1()
 			tolayer2(pkt);
 		}
 	}
-    printdt1(&dt1);
+    printdist_table1(&dist_table1);
 }
 
 
@@ -64,7 +64,7 @@ void rtupdate1(struct rtpkt *rcvdpkt)
 }
 
 
-void printdt1(struct distance_table *dtptr)
+void printdist_table1(struct distance_table *dtptr)
 
 
 {

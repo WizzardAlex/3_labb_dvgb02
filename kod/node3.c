@@ -4,20 +4,21 @@ extern int TRACE;
 extern int YES;
 extern int NO;
 
-void printdt3(struct distance_table *dtptr);
+void printdist_table3(struct distance_table *dtptr);
 struct distance_table
 {
   int costs[4][4];
 } dt3;
 
+dist_table3 dist_table3;
 /* students to write the following two routines, and maybe some others */
 
 void rtinit3()
 {
 
-    dt3.costs[0][0] = 7;
-    dt3.costs[3][1] = 999;
-    dt3.costs[2][2] = 2;
+    dist_table3.costs[0][0] = 7;
+    dist_table3.costs[3][1] = 999;
+    dist_table3.costs[2][2] = 2;
 	int node = 3;
 
 	int k;
@@ -25,7 +26,7 @@ void rtinit3()
     for (k=0; k < 3; k++){ // initialize unkown values
 		if (k != node){ // skips own row
 			for (j=0; j < 3; j++){
-				if(k!=j)	dt3.costs[k][j] = 999;
+				if(k!=j)	dist_table3.costs[k][j] = 999;
 			}
 		}
     }
@@ -46,7 +47,7 @@ void rtinit3()
 			tolayer2(pkt);
 		}
 	}
-    printdt3(&dt3);
+    printdist_table3(&dist_table3);
 }
 
 
@@ -58,7 +59,7 @@ void rtupdate3(struct rtpkt *rcvdpkt)
 }
 
 
-void printdt3(struct distance_table *dtptr)
+void printdist_table3(struct distance_table *dtptr)
 
 
 {

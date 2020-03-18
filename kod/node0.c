@@ -12,24 +12,24 @@ struct distance_table
 } dt0;
 
 
+dt0 dist_table0;
 /* students to write the following two routines, and maybe some others */
 
 void rtinit0()
 {
     // fill own table with values
 
-    dt0 dist_table;
 
     int k;
     int j;
     for (k=0; k < 3; k++){ // initialize unkown values
         for (j=0; j < 3; j++){
-            dist_table.costs[k][j] = 999;
+            dist_table0.costs[k][j] = 999;
         }
     }
-    dist_table.costs[1][1] = 1;
-    dist_table.costs[2][2] = 3;
-    dist_table.costs[3][3] = 7;
+    dist_table0.costs[1][1] = 1;
+    dist_table0.costs[2][2] = 3;
+    dist_table0.costs[3][3] = 7;
 
     // init row to send
     struct rtpkt pkt;
@@ -45,7 +45,7 @@ void rtinit0()
         pkt.destid = i;
         tolayer2(pkt);
     }
-    printdt0(&dt0);
+    printdt0(&dist_table0);
 }
 
 
