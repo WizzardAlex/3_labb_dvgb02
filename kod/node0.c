@@ -42,7 +42,7 @@ void rtinit0()
     pkt.mincost[3] = 7;
 
     int i;
-    for (i=1; i < 3; i++){ // send to all neighbors
+    for (i=1; i < 4; i++){ // send to all neighbors
         pkt.destid = i;
         tolayer2(pkt);
     }
