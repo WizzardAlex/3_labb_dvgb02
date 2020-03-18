@@ -23,8 +23,8 @@ void rtinit0()
 
     int k;
     int j;
-    for (k=0; k < 3; k++){ // initialize unkown values
-        for (j=0; j < 3; j++){
+    for (k=0; k < 4; k++){ // initialize unkown values
+        for (j=0; j < 4; j++){
             dist_table0.costs[k][j] = 999;
         }
     }
@@ -53,6 +53,20 @@ void rtinit0()
 void rtupdate0(struct rtpkt *rcvdpkt)
 
 {
+    int col = rcvdpkt->sourceid;
+    int table_val, dest_val;
+    int i;
+
+    for(i=1; i<4; i++){
+	if(rcvdpkt->mincost[i] == 999) continue;
+	table_val = dist_table0.costs[i][col];
+	dest_val = rcvdpkt->mincost[i]+dist_table0.costs[col][col];
+	if(dest_val<table_val) {
+	    dist_table0.costs[i][col] = dest_val;
+	}
+    }
+    printdt0(&dist_table0);
+
 }
 
 

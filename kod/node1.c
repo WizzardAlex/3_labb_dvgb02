@@ -6,7 +6,6 @@ extern int YES;
 extern int NO;
 
 
-
 struct distance_table
 {
   int costs[4][4];
@@ -28,9 +27,9 @@ void rtinit1()
 
     int k;
     int j;
-    for (k=0; k < 3; k++){ // initialize unkown values
+    for (k=0; k < 4; k++){ // initialize unkown values
 		if (k != node){ // skips own row
-			for (j=0; j < 3; j++){
+			for (j=0; j < 4; j++){
 				if(k!=j)	dist_table1.costs[k][j] = 999;
 			}
 		}
@@ -41,7 +40,7 @@ void rtinit1()
     pkt.sourceid = node;
     pkt.destid= 0;
     pkt.mincost[0] = 1;
-    pkt.mincost[1] = 0;
+    pkt.mincost[1] = 999;
     pkt.mincost[2] = 1;
     pkt.mincost[3] = 999;
 
@@ -60,6 +59,19 @@ void rtupdate1(struct rtpkt *rcvdpkt)
 
 
 {
+    int col = rcvdpkt->sourceid;
+    int table_val, dest_val;
+    int i;
+
+    for(i=0; i<4; i++){
+	if(rcvdpkt->mincost[i] == 999 || i== 1) continue;
+	table_val = dist_table1.costs[i][col];
+	dest_val = rcvdpkt->mincost[i]+dist_table1.costs[col][col];
+	if(dest_val<table_val) {
+	    dist_table1.costs[i][col] = dest_val;
+	}
+    }
+    printdist_table1(&dist_table1);
 
 }
 

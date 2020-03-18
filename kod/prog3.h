@@ -9,7 +9,6 @@ struct rtpkt {
                          (must be an immediate neighbor) */
   int mincost[4];    /* min cost to node 0 ... 3 */
   };
-
 void  rtinit0(void);
 void  rtinit1(void);
 void  rtinit2(void);
