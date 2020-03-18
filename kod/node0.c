@@ -57,8 +57,8 @@ void rtupdate0(struct rtpkt *rcvdpkt)
     int table_val, dest_val;
     int i;
 
-    for(i=1; i<4; i++){
-	if(rcvdpkt->mincost[i] == 999) continue;
+    for(i=0; i<4; i++){
+	if(rcvdpkt->mincost[i] == 999|| i==0) continue;
 	table_val = dist_table0.costs[i][col];
 	dest_val = rcvdpkt->mincost[i]+dist_table0.costs[col][col];
 	if(dest_val<table_val) {
