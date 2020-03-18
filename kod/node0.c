@@ -16,10 +16,9 @@ struct distance_table
 void rtinit0()
 {
     // fill own table with values
-    dt0.costs[0][0] = 0;
-    dt0.costs[0][1] = 1;
-    dt0.costs[0][2] = 3;
-    dt0.costs[0][3] = 7;
+    dt0.costs[1][1] = 1;
+    dt0.costs[2][2] = 3;
+    dt0.costs[3][3] = 7;
 
     int k;
     int j;

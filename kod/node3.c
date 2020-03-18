@@ -14,10 +14,9 @@ struct distance_table
 void rtinit3()
 {
 
-    dt3.costs[3][0] = 7;
+    dt3.costs[0][0] = 7;
     dt3.costs[3][1] = 999;
-    dt3.costs[3][2] = 2;
-    dt3.costs[3][3] = 0;
+    dt3.costs[2][2] = 2;
 	int node = 3;
 
 	int k;
@@ -38,7 +37,7 @@ void rtinit3()
     pkt.mincost[1] = 999;
     pkt.mincost[2] = 2;
     pkt.mincost[3] = 0;
-   
+
     int i;
     for (i=0; i < 3; i++){ // send to all neighbors
 		if (i != node){
