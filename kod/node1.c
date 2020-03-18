@@ -30,7 +30,7 @@ void rtinit1()
     for (k=0; k < 3; k++){ // initialize unkown values
 		if (k != node){ // skips own row
 			for (j=0; j < 3; j++){
-				dt0.costs[k][j] = 999;
+				if(k!=j)	dt0.costs[k][j] = 999;
 			}
 		}
     }

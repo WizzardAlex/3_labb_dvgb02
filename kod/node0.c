@@ -24,7 +24,7 @@ void rtinit0()
     int j;
     for (k=1; k < 3; k++){ // initialize unkown values
         for (j=0; j < 3; j++){
-            dt0.costs[k][j] = 999;
+	    if(k!=j)	dt0.costs[k][j] = 999;
         }
     }
 
