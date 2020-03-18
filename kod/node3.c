@@ -59,13 +59,15 @@ void rtupdate3(struct rtpkt *rcvdpkt)
     int table_val, dest_val;
     int i;
 
-    for(i=1; i<4; i++){
-	if(rcvdpkt->mincost[i] == 999 || i == 3) continue;
-	table_val = dist_table3.costs[i][col];
-	dest_val = rcvdpkt->mincost[i]+dist_table3.costs[col][col];
-	if(dest_val<table_val) {
-	    dist_table3.costs[i][col] = dest_val;
-	}
+    for(i=0; i<4; i++){
+        if(rcvdpkt->mincost[i] == 999 || i == 3) continue;
+        
+        table_val = dist_table3.costs[i][col];
+        dest_val = rcvdpkt->mincost[i]+dist_table3.costs[col][col];
+        
+        if(dest_val<table_val) {
+            dist_table3.costs[i][col] = dest_val;
+        }
     }
     printdist_table3(&dist_table3);
 }
