@@ -78,7 +78,7 @@ void rtupdate1(struct rtpkt *rcvdpkt)
         dest_val = rcvdpkt->mincost[i]+dist_table1.costs[col][col];
         if(dest_val<table_val) {
             dist_table1.costs[i][col] = dest_val;
-            changed =1;
+            changed = 1;
         }
     }
 
@@ -91,18 +91,17 @@ void rtupdate1(struct rtpkt *rcvdpkt)
             if(j!=node) nodes[j]= j;
         }
 
-
+        int cost1, cost2, cost3;
         for(k=0; k<4; k++){
-            if(k != node){
             sendpkt.destid = k;
-            sendpkt.mincost[k]=min(dist_table1.costs[k][nodes[0]],dist_table1.costs[k][nodes[1]],dist_table1.costs[k][nodes[2]]);
-            printf("%d\n",sendpkt.mincost[k]);
-            }
-            else sendpkt.mincost[k] = 999;
-
-        printdist_table1(&dist_table1);
-        tolayer2(sendpkt);
+            cost1 = dist_table1.costs[k][nodes[0]];
+            cost2 = dist_table1.costs[k][nodes[1]];
+            cost2 = dist_table1.costs[k][nodes[2]];
+            sendpkt.mincost[k] = min(cost1,cost2, cost3);
+            
+            tolayer2(sendpkt);
         }
+        printdist_table1(&dist_table1);
     }
 
 }
