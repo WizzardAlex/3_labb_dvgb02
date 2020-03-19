@@ -76,20 +76,15 @@ void rtupdate2(struct rtpkt *rcvdpkt)
 	int cost1,cost2,cost3;
         int nodes[3];
 
-        int j;
-        for(j=0; j<4; j++){
-            if(j!=node) nodes[j]= j;
-        }
-
         int k;
         for(k=0; k<4; k++){
             if(k!=node){
-		cost1 = dist_table2.costs[k][nodes[0]];
-		cost2 = dist_table2.costs[k][nodes[1]];
-		cost3 = dist_table2.costs[k][nodes[2]];
+		cost1 = dist_table2.costs[k][0];
+		cost2 = dist_table2.costs[k][1];
+		cost3 = dist_table2.costs[k][3];
 
                 sendpkt.destid = k;
-                sendpkt.mincost[k]=min(cose1,cost2,cost3);
+                sendpkt.mincost[k]=min(cost1,cost2,cost3);
 		tolayer2(sendpkt);
             }
 	}
