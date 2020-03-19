@@ -17,9 +17,6 @@ struct distance_table dist_table3;
 void rtinit3()
 {
 
-    dist_table3.costs[0][0] = 7;
-    dist_table3.costs[3][1] = 999;
-    dist_table3.costs[2][2] = 2;
 	int node = 3;
 
 	int k;
@@ -27,10 +24,13 @@ void rtinit3()
     for (k=0; k < 4; k++){ // initialize unkown values
 		if (k != node){ // skips own row
 			for (j=0; j < 4; j++){
-				if(k!=j)	dist_table3.costs[k][j] = 999;
+				dist_table3.costs[k][j] = 999;
 			}
 		}
     }
+    dist_table3.costs[0][0] = 7;
+    dist_table3.costs[3][1] = 999;
+    dist_table3.costs[2][2] = 2;
 
     // init row to send
     struct rtpkt pkt;
@@ -61,41 +61,45 @@ void rtupdate3(struct rtpkt *rcvdpkt)
 
     int i;
     for(i=0; i < 4; i++){
-        if(i == node) continue;
+        if(i != node) {
 
-        table_val = dist_table3.costs[i][col];
-        dest_val = rcvdpkt->mincost[i]+dist_table3.costs[col][col];
-        if(dest_val < table_val) {
-            dist_table3.costs[i][col] = dest_val;
-            changed = 1;
+	    table_val = dist_table3.costs[i][col];
+	    dest_val = rcvdpkt->mincost[i]+dist_table3.costs[col][col];
+	    if(dest_val < table_val) {
+		dist_table3.costs[i][col] = dest_val;
+		changed = 1;
+	    }
         }
     }
 
     if(changed == 1){
         struct rtpkt sendpkt;
         sendpkt.sourceid=node;
-        int nodes[3];
         int cost1, cost2, cost3;
 
-        int j;
-        for(j=0; j < 4; j++){
-            if(j!=node) nodes[j]= j;
-        }
 
         int k;
         for(k=0; k < 4; k++){
             if(k != node){
-                sendpkt.destid = k;
 
                 cost1=dist_table3.costs[k][0];
                 cost2=dist_table3.costs[k][1];
                 cost3=dist_table3.costs[k][2];
 
                 sendpkt.mincost[k]=min(cost1 ,cost2, cost3);
-		tolayer2(sendpkt);
             }
+	    else sendpkt.mincost[k] = 999;
 
         }
+	sendpkt.destid = 0;
+	tolayer2(sendpkt);
+
+	sendpkt.destid = 1;
+	tolayer2(sendpkt);
+
+	sendpkt.destid = 2;
+	tolayer2(sendpkt);
+
         printdist_table3(&dist_table3);
     }
 }

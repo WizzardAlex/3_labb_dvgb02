@@ -85,22 +85,28 @@ void rtupdate1(struct rtpkt *rcvdpkt)
     if(changed){
         struct rtpkt sendpkt;
         sendpkt.sourceid=node;
-        int j,k;
-        int nodes[3];
+        int k;
 
 
         int cost1, cost2, cost3;
         for(k=0; k<4; k++){
 	    if(k!=node){
-            sendpkt.destid = k;
             cost1 = dist_table1.costs[k][0];
             cost2 = dist_table1.costs[k][2];
             cost3 = dist_table1.costs[k][3];
             sendpkt.mincost[k] = min(cost1,cost2, cost3);
 
-            tolayer2(sendpkt);
 	    }
+	    else sendpkt.mincost[k] = 999;
         }
+	sendpkt.destid = 0;
+	tolayer2(sendpkt);
+
+	sendpkt.destid = 2;
+	tolayer2(sendpkt);
+
+	sendpkt.destid = 3;
+	tolayer2(sendpkt);
         printdist_table1(&dist_table1);
     }
 
