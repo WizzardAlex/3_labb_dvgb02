@@ -64,11 +64,15 @@ void rtupdate1(struct rtpkt *rcvdpkt)
     int i;
 
     for(i=0; i<4; i++){
-	if(rcvdpkt->mincost[i] == 999 || i== 1) continue;
+	//if(rcvdpkt->mincost[i] == 999 || i== 1) continue;
 	table_val = dist_table1.costs[i][col];
 	dest_val = rcvdpkt->mincost[i]+dist_table1.costs[col][col];
 	if(dest_val<table_val) {
 	    dist_table1.costs[i][col] = dest_val;
+	}
+
+	else if(table_val==999){
+	    dist_table1.costs[i][col]= dist_table1.costs[col][col]*2+dist_table1.costs[i][i];
 	}
     }
     printdist_table1(&dist_table1);
