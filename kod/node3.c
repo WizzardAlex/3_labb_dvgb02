@@ -66,59 +66,54 @@ void rtupdate3(struct rtpkt *rcvdpkt)
     int changed=0;
     int col = rcvdpkt->sourceid;
     int table_val, dest_val;
+
     int i;
-
-    for(i=0; i<4; i++){
-	if(i==node) continue;
-	table_val = dist_table3.costs[i][col];
-	dest_val = rcvdpkt->mincost[i]+dist_table3.costs[col][col];
-	if(dest_val<table_val) {
-	    dist_table3.costs[i][col] = dest_val;
-	    changed =1;
-	}
-
-    }
-    if(changed){
-	struct rtpkt sendpkt;
-	sendpkt.sourceid=node;
-	int j,k;
-	int nodes[3];
-	int cost1, cost2, cost3;
-	for(j=0; j<4; j++){
-		if(j!=node) nodes[j]= j;
-	}
-
-
-	for(k=0; k<4; k++){
-	    if(i!=node){
-		    sendpkt.destid=i;
-
-		    printdist_table3(&dist_table3);
-		    cost1=dist_table3.costs[i][0];
-		    cost2=dist_table3.costs[i][1];
-		    cost3=dist_table3.costs[i][2];
-		    printf("%d\t%d\t%d\n",cost1,cost2,cost3);
-
-		    sendpkt.mincost[i]=min(cost1 ,cost2, cost3);
-		    printf("%d\n",sendpkt.mincost[i]);
-	    }
-	    else sendpkt.mincost[i] = 999;
-
-	}
-    printdist_table3(&dist_table3);
-    tolayer2(sendpkt);
+    for(i=0; i < 4; i++){
+        if(i == node) continue;
+        
+        table_val = dist_table3.costs[i][col];
+        dest_val = rcvdpkt->mincost[i]+dist_table3.costs[col][col];
+        if(dest_val < table_val) {
+            dist_table3.costs[i][col] = dest_val;
+            changed = 1;
+        }
     }
 
+    if(changed == 1){
+        struct rtpkt sendpkt;
+        sendpkt.sourceid=node;
+        int nodes[3];
+        int cost1, cost2, cost3;
+        
+        int j;
+        for(j=0; j < 4; j++){
+            if(j!=node) nodes[j]= j;
+        }
+
+        int k;
+        for(k=0; k < 4; k++){
+            if(k != node){ // i var här innan
+                sendpkt.destid = k;
+
+                cost1=dist_table3.costs[k][0];
+                cost2=dist_table3.costs[k][1];
+                cost3=dist_table3.costs[k][2];
+                printf("%d\t%d\t%d\n",cost1,cost2,cost3);
+
+                sendpkt.mincost[k]=min(cost1 ,cost2, cost3);
+                printf("%d\n",sendpkt.mincost[k]);
+            }
+            else { 
+                sendpkt.mincost[k] = 999;
+            }
+
+        }
+        printdist_table3(&dist_table3);
+        tolayer2(sendpkt);
+    }
 }
 
-
-
-
-
-void printdist_table3(struct distance_table *dtptr)
-
-
-{
+void printdist_table3(struct distance_table *dtptr){
   printf("             via     \n");
   printf("   D3 |    0     2 \n");
   printf("  ----|-----------\n");

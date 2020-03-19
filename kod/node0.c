@@ -57,9 +57,7 @@ void rtinit0()
 }
 
 
-void rtupdate0(struct rtpkt *rcvdpkt)
-
-{
+void rtupdate0(struct rtpkt *rcvdpkt){
     int node=0,
 	changed=0;
     int col = rcvdpkt->sourceid;
@@ -67,31 +65,37 @@ void rtupdate0(struct rtpkt *rcvdpkt)
     int i;
 
     for(i=0; i<4; i++){
-	if(i==node) continue;
-	table_val = dist_table0.costs[i][col];
-	dest_val = rcvdpkt->mincost[i]+dist_table0.costs[col][col];
-	if(dest_val<table_val) {
-	    dist_table0.costs[i][col] = dest_val;
-	    changed =1;
-	}
+        if(i==node) continue;
+        table_val = dist_table0.costs[i][col];
+        dest_val = rcvdpkt->mincost[i]+dist_table0.costs[col][col];
+        if(dest_val < table_val) {
+            dist_table0.costs[i][col] = dest_val;
+            changed = 1;
+        }
+        else if (dest_val >= 999){
+            changed =1;
+            dist_table0.costs[i][col]= rcvdpkt->mincost[i]+dist_table0.costs[i][i];
+        }
 
     }
     if(changed){
-	struct rtpkt sendpkt;
-	sendpkt.sourceid=node;
-	printdt0(&dist_table0);
+        struct rtpkt sendpkt;
+        sendpkt.sourceid = node;
+        printdt0(&dist_table0);
 
-	for(i=0; i<4; i++){
-	    if(i!=node){
-		sendpkt.destid=i;
-		sendpkt.mincost[i]=min(dist_table0.costs[i][1],dist_table0.costs[i][2],dist_table0.costs[i][3]);
-		printf("%d\n",sendpkt.mincost[i]);
-	    }
-	    else sendpkt.mincost[i] = 999;
+        for(i=0; i<4; i++){
+            if(i != node){
+                sendpkt.destid=i;
+                sendpkt.mincost[i]=min(dist_table0.costs[i][1],dist_table0.costs[i][2],dist_table0.costs[i][3]);
+                printf("%d\n",sendpkt.mincost[i]);
+            }
+            else {
+                sendpkt.mincost[i] = 999;
+            }
 
-	}
-    printdt0(&dist_table0);
-    tolayer2(sendpkt);
+        }
+        printdt0(&dist_table0);
+        tolayer2(sendpkt);
     }
 
 
@@ -99,10 +103,7 @@ void rtupdate0(struct rtpkt *rcvdpkt)
 }
 
 
-void printdt0(struct distance_table *dtptr)
-
-
-{
+void printdt0(struct distance_table *dtptr){
   printf("                via     \n");
   printf("   D0 |    1     2    3 \n");
   printf("  ----|-----------------\n");
