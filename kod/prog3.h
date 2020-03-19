@@ -26,3 +26,4 @@ void linkhandler3(int linkid, int newcost);
 
 void tolayer2(struct rtpkt packet);
 
+int min(int val1, int val2, int val3);

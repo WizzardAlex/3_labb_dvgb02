@@ -12,6 +12,15 @@ struct distance_table
 void printdist_table3(struct distance_table *dtptr);
 struct distance_table dist_table3;
 /* students to write the following two routines, and maybe some others */
+/*int min(int val1, int val2, int val3){
+    int m;
+    if(val1<=val2 && val1<=val3) m=val1;
+    if(val2<val1 && val2<=val3) m=val2;
+    if(val3<val1 && val3<val2) m=val3;
+    return m;
+}
+*/
+
 
 void rtinit3()
 {
@@ -50,30 +59,60 @@ void rtinit3()
     printdist_table3(&dist_table3);
 }
 
-
 void rtupdate3(struct rtpkt *rcvdpkt)
-
-
 {
+
+    int node=3;
+    int changed=0;
     int col = rcvdpkt->sourceid;
     int table_val, dest_val;
     int i;
 
     for(i=0; i<4; i++){
-        //if(rcvdpkt->mincost[i] == 999 || i == 3) continue;
-
-        table_val = dist_table3.costs[i][col];
-        dest_val = rcvdpkt->mincost[i]+dist_table3.costs[col][col];
-
-        if(dest_val<table_val) {
-            dist_table3.costs[i][col] = dest_val;
-        }
-	else if(table_val==999){
-	    dist_table3.costs[i][col]= dist_table3.costs[col][col]*2+dist_table3.costs[i][i];
+	if(i==node) continue;
+	table_val = dist_table3.costs[i][col];
+	dest_val = rcvdpkt->mincost[i]+dist_table3.costs[col][col];
+	if(dest_val<table_val) {
+	    dist_table3.costs[i][col] = dest_val;
+	    changed =1;
 	}
+
     }
+    if(changed){
+	struct rtpkt sendpkt;
+	sendpkt.sourceid=node;
+	int j,k;
+	int nodes[3];
+	int cost1, cost2, cost3;
+	for(j=0; j<4; j++){
+		if(j!=node) nodes[j]= j;
+	}
+
+
+	for(k=0; k<4; k++){
+	    if(i!=node){
+		    sendpkt.destid=i;
+
+		    printdist_table3(&dist_table3);
+		    cost1=dist_table3.costs[i][0];
+		    cost2=dist_table3.costs[i][1];
+		    cost3=dist_table3.costs[i][2];
+		    printf("%d\t%d\t%d\n",cost1,cost2,cost3);
+
+		    sendpkt.mincost[i]=min(cost1 ,cost2, cost3);
+		    printf("%d\n",sendpkt.mincost[i]);
+	    }
+	    else sendpkt.mincost[i] = 999;
+
+	}
     printdist_table3(&dist_table3);
+    tolayer2(sendpkt);
+    }
+
 }
+
+
+
 
 
 void printdist_table3(struct distance_table *dtptr)

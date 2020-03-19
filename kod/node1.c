@@ -14,6 +14,13 @@ struct distance_table
 void printdist_table1(struct distance_table *dtptr);
 struct distance_table dist_table1;
 /* students to write the following two routines, and maybe some others */
+/*int min(int val1, int val2, int val3){
+    int m;
+    if(val1<=val2 && val1<=val3) m=val1;
+    if(val2<val1 && val2<=val3) m=val2;
+    if(val3<val1 && val3<val2) m=val3;
+    return m;
+}*/
 
 
 void rtinit1()
@@ -59,23 +66,44 @@ void rtupdate1(struct rtpkt *rcvdpkt)
 
 
 {
+    int node=1,
+	changed=0;
     int col = rcvdpkt->sourceid;
     int table_val, dest_val;
     int i;
 
     for(i=0; i<4; i++){
-	//if(rcvdpkt->mincost[i] == 999 || i== 1) continue;
+	if(i==node) continue;
 	table_val = dist_table1.costs[i][col];
 	dest_val = rcvdpkt->mincost[i]+dist_table1.costs[col][col];
 	if(dest_val<table_val) {
 	    dist_table1.costs[i][col] = dest_val;
+	    changed =1;
 	}
 
-	else if(table_val==999){
-	    dist_table1.costs[i][col]= dist_table1.costs[col][col]*2+dist_table1.costs[i][i];
-	}
     }
+    if(changed){
+	struct rtpkt sendpkt;
+	sendpkt.sourceid=node;
+	int j,k;
+	int nodes[3];
+	for(j=0; j<4; j++){
+		if(j!=node) nodes[j]= j;
+	}
+
+
+	for(k=0; k<4; k++){
+	    if(i!=node){
+		sendpkt.destid=i;
+		sendpkt.mincost[i]=min(dist_table1.costs[i][nodes[0]],dist_table1.costs[i][nodes[1]],dist_table1.costs[i][nodes[2]]);
+		printf("%d\n",sendpkt.mincost[i]);
+	    }
+	    else sendpkt.mincost[i] = 999;
+
+	}
     printdist_table1(&dist_table1);
+    tolayer2(sendpkt);
+    }
 
 }
 
