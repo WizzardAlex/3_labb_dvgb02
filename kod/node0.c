@@ -72,10 +72,10 @@ void rtupdate0(struct rtpkt *rcvdpkt){
             dist_table0.costs[i][col] = dest_val;
             changed = 1;
         }
-        else if (dest_val >= 999){
-            changed =1;
-            dist_table0.costs[i][col]= rcvdpkt->mincost[i]+dist_table0.costs[i][i];
-        }
+        //else if (dest_val >= 999){
+         //   changed =1;
+          //  dist_table0.costs[i][col]= rcvdpkt->mincost[i]*2+dist_table0.costs[col][col];
+        //}
 
     }
     if(changed){
@@ -92,15 +92,16 @@ void rtupdate0(struct rtpkt *rcvdpkt){
             else {
                 sendpkt.mincost[i] = 999;
             }
-
-        }
         printdt0(&dist_table0);
         tolayer2(sendpkt);
+
+        }
     }
 
 
 
 }
+
 
 
 void printdt0(struct distance_table *dtptr){

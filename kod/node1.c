@@ -81,7 +81,7 @@ void rtupdate1(struct rtpkt *rcvdpkt)
             changed =1;
         }
     }
-    
+
     if(changed){
         struct rtpkt sendpkt;
         sendpkt.sourceid=node;
@@ -100,9 +100,9 @@ void rtupdate1(struct rtpkt *rcvdpkt)
             }
             else sendpkt.mincost[k] = 999;
 
-        }
         printdist_table1(&dist_table1);
         tolayer2(sendpkt);
+        }
     }
 
 }

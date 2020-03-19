@@ -76,12 +76,12 @@ void rtupdate2(struct rtpkt *rcvdpkt)
             changed = 1;
         }
     }
-    
+
     if(changed == 1){
         struct rtpkt sendpkt;
         sendpkt.sourceid=node;
         int nodes[3];
-        
+
         int j;
         for(j=0; j<4; j++){
             if(j!=node) nodes[j]= j;
@@ -97,9 +97,9 @@ void rtupdate2(struct rtpkt *rcvdpkt)
             else {
                 sendpkt.mincost[k] = 999;
             }
-        }
         printdist_table2(&dist_table2);
         tolayer2(sendpkt);
+        }
     }
 
 }
