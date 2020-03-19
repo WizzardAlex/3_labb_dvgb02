@@ -12,14 +12,6 @@ struct distance_table
 void printdist_table3(struct distance_table *dtptr);
 struct distance_table dist_table3;
 /* students to write the following two routines, and maybe some others */
-/*int min(int val1, int val2, int val3){
-    int m;
-    if(val1<=val2 && val1<=val3) m=val1;
-    if(val2<val1 && val2<=val3) m=val2;
-    if(val3<val1 && val3<val2) m=val3;
-    return m;
-}
-*/
 
 
 void rtinit3()
@@ -92,24 +84,19 @@ void rtupdate3(struct rtpkt *rcvdpkt)
 
         int k;
         for(k=0; k < 4; k++){
-            if(k != node){ // i var här innan
+            if(k != node){
                 sendpkt.destid = k;
 
                 cost1=dist_table3.costs[k][0];
                 cost2=dist_table3.costs[k][1];
                 cost3=dist_table3.costs[k][2];
-                printf("%d\t%d\t%d\n",cost1,cost2,cost3);
 
                 sendpkt.mincost[k]=min(cost1 ,cost2, cost3);
-                printf("%d\n",sendpkt.mincost[k]);
-            }
-            else {
-                sendpkt.mincost[k] = 999;
+		tolayer2(sendpkt);
             }
 
-        printdist_table3(&dist_table3);
-        tolayer2(sendpkt);
         }
+        printdist_table3(&dist_table3);
     }
 }
 
