@@ -1,0 +1,33 @@
+\section{Uppgift 1}
+
+\begin{enumerate}[ Subnät, antal bitar som krävs: ]
+\item 63 interfaces \aprox $2^6 = 64$
+\item 95 interfaces \aprox $2^7 = 128 $
+\item 16 interfaces \aprox $2^4 = 16 $
+\end{enumerate}
+
+
+
+\begin{enumerate}[ Nätmasker:]
+\item $32-6=26$
+\item $32-7=25$
+\item $32-4=28$
+\end{enumerate}
+
+
+Började att ta fram IP adresserna för subnät 2), då den hade som flest interfaces, där efter 1), och
+slutglitligen 3).  Vänstra delen nedan i IP adressen är den statiska delen, där efterföljande 'x' är
+möjliga IP adresser som subnätet kan använda.
+\begin{enumerate}[ IP adress:]
+\item 223.1.17. 10xx xxxx : 64 unika möjliga subnäts adresser, där 223.1.17.128/26 är subnätets
+statiska IP
+, då adresserna kommer vara mellan 223.1.17.128-223.1.17.191
+\item 223.1.17. 0xxx xxxx : 128 unika möjliga subnäts adresser, där 223.1.17.0/25 är subnätets
+statiska IP, då adresserna kommer vara
+mellan
+223.1.17.0 - 223.1.17.127
+\item 223.1.17. 1100 xxxx : 16 unika möjliga subnäts adresser, där 223.1.17.192/28 är subnätets
+statiska IP, då adresserna kommer vara
+mellan 223.1.17.192-223.1.17.207
+\end{enumerate}
+
