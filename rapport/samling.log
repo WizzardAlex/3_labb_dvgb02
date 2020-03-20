@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2019.11.26)  20 MAR 2020 15:20
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2019.11.26)  20 MAR 2020 15:23
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -63,6 +63,15 @@ Package caption3 Info: TeX engine: e-TeX on input line 64.
 \c@caption@flags=\count88
 \c@ContinuedFloat=\count89
 )
+(/usr/share/texlive/texmf-dist/tex/latex/enumitem/enumitem.sty
+Package: enumitem 2019/06/20 v3.9 Customized lists
+\labelindent=\skip43
+\enit@outerparindent=\dimen112
+\enit@toks=\toks15
+\enit@inbox=\box27
+\enit@count@id=\count90
+\enitdp@description=\count91
+)
 (/usr/share/texlive/texmf-dist/tex/latex/base/fontenc.sty
 Package: fontenc 2018/08/11 v2.0j Standard LaTeX package
 
@@ -72,8 +81,8 @@ LaTeX Font Info:    Redeclaring font encoding T1 on input line 48.
 ))
 (/usr/share/texlive/texmf-dist/tex/latex/base/inputenc.sty
 Package: inputenc 2018/08/11 v1.3c Input encoding file
-\inpenc@prehook=\toks15
-\inpenc@posthook=\toks16
+\inpenc@prehook=\toks16
+\inpenc@posthook=\toks17
 )
 (/usr/share/texlive/texmf-dist/tex/generic/babel/babel.sty
 Package: babel 2019/06/03 3.32 The Babel package
@@ -86,38 +95,37 @@ Language: swedish 2005/03/31 v2.3d Swedish support from the babel system
 
 (/usr/share/texlive/texmf-dist/tex/generic/babel/babel.def
 File: babel.def 2019/06/03 3.32 Babel common definitions
-\babel@savecnt=\count90
-\U@D=\dimen112
+\babel@savecnt=\count92
+\U@D=\dimen113
 
 (/usr/share/texlive/texmf-dist/tex/generic/babel/txtbabel.def)
-\bbl@dirlevel=\count91
+\bbl@dirlevel=\count93
 )
 Package babel Info: Making " an active character on input line 90.
 ))
 (/usr/share/texlive/texmf-dist/tex/latex/tools/multicol.sty
 Package: multicol 2018/12/27 v1.8v multicolumn formatting (FMi)
-\c@tracingmulticols=\count92
-\mult@box=\box27
-\multicol@leftmargin=\dimen113
-\c@unbalance=\count93
-\c@collectmore=\count94
-\doublecol@number=\count95
-\multicoltolerance=\count96
-\multicolpretolerance=\count97
-\full@width=\dimen114
-\page@free=\dimen115
-\premulticols=\dimen116
-\postmulticols=\dimen117
-\multicolsep=\skip43
-\multicolbaselineskip=\skip44
-\partial@page=\box28
-\last@line=\box29
-\maxbalancingoverflow=\dimen118
-\mult@rightbox=\box30
-\mult@grightbox=\box31
-\mult@gfirstbox=\box32
-\mult@firstbox=\box33
-\@tempa=\box34
+\c@tracingmulticols=\count94
+\mult@box=\box28
+\multicol@leftmargin=\dimen114
+\c@unbalance=\count95
+\c@collectmore=\count96
+\doublecol@number=\count97
+\multicoltolerance=\count98
+\multicolpretolerance=\count99
+\full@width=\dimen115
+\page@free=\dimen116
+\premulticols=\dimen117
+\postmulticols=\dimen118
+\multicolsep=\skip44
+\multicolbaselineskip=\skip45
+\partial@page=\box29
+\last@line=\box30
+\maxbalancingoverflow=\dimen119
+\mult@rightbox=\box31
+\mult@grightbox=\box32
+\mult@gfirstbox=\box33
+\mult@firstbox=\box34
 \@tempa=\box35
 \@tempa=\box36
 \@tempa=\box37
@@ -134,43 +142,44 @@ Package: multicol 2018/12/27 v1.8v multicolumn formatting (FMi)
 \@tempa=\box48
 \@tempa=\box49
 \@tempa=\box50
-\c@columnbadness=\count98
-\c@finalcolumnbadness=\count99
-\last@try=\dimen119
-\multicolovershoot=\dimen120
-\multicolundershoot=\dimen121
-\mult@nat@firstbox=\box51
-\colbreak@box=\box52
-\mc@col@check@num=\count100
-)
-No file samling.aux.
+\@tempa=\box51
+\c@columnbadness=\count100
+\c@finalcolumnbadness=\count101
+\last@try=\dimen120
+\multicolovershoot=\dimen121
+\multicolundershoot=\dimen122
+\mult@nat@firstbox=\box52
+\colbreak@box=\box53
+\mc@col@check@num=\count102
+) (./samling.aux)
 \openout1 = `samling.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 10.
-LaTeX Font Info:    ... okay on input line 10.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 10.
-LaTeX Font Info:    ... okay on input line 10.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 10.
-LaTeX Font Info:    ... okay on input line 10.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 10.
-LaTeX Font Info:    ... okay on input line 10.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 10.
-LaTeX Font Info:    ... okay on input line 10.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 10.
-LaTeX Font Info:    ... okay on input line 10.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 11.
+LaTeX Font Info:    ... okay on input line 11.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 11.
+LaTeX Font Info:    ... okay on input line 11.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 11.
+LaTeX Font Info:    ... okay on input line 11.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 11.
+LaTeX Font Info:    ... okay on input line 11.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 11.
+LaTeX Font Info:    ... okay on input line 11.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 11.
+LaTeX Font Info:    ... okay on input line 11.
+
 (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count101
-\scratchdimen=\dimen122
-\scratchbox=\box53
-\nofMPsegments=\count102
-\nofMParguments=\count103
-\everyMPshowfont=\toks17
-\MPscratchCnt=\count104
-\MPscratchDim=\dimen123
-\MPnumerator=\count105
-\makeMPintoPDFobject=\count106
-\everyMPtoPDFconversion=\toks18
+\scratchcounter=\count103
+\scratchdimen=\dimen123
+\scratchbox=\box54
+\nofMPsegments=\count104
+\nofMParguments=\count105
+\everyMPshowfont=\toks18
+\MPscratchCnt=\count106
+\MPscratchDim=\dimen124
+\MPnumerator=\count107
+\makeMPintoPDFobject=\count108
+\everyMPtoPDFconversion=\toks19
 ) (/usr/share/texlive/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
 Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
 
@@ -227,34 +236,24 @@ Package caption Info: End \AtBeginDocument code.
 
 (./u1.tex
 
-! LaTeX Error: Something's wrong--perhaps a missing \item.
+! Package enumitem Error: Subn\IeC {\"a}t undefined.
 
-See the LaTeX manual or LaTeX Companion for explanation.
+See the enumitem package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.4 \item 6
-           3 interfaces \aprox $2^6 = 64$
+l.3 ...merate}[ Subnät, antal bitar som krävs: ]
+                                                  
 ? 
 
-! LaTeX Error: Something's wrong--perhaps a missing \item.
+! Package enumitem Error: antal bitar som kr\IeC {\"a}vs: undefined.
 
-See the LaTeX manual or LaTeX Companion for explanation.
+See the enumitem package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.4 \item 6
-           3 interfaces \aprox $2^6 = 64$
-? 
-
-! LaTeX Error: Something's wrong--perhaps a missing \item.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
+l.3 ...merate}[ Subnät, antal bitar som krävs: ]
                                                   
-l.4 \item 6
-           3 interfaces \aprox $2^6 = 64$
 ? 
 ! Undefined control sequence.
 l.4 \item 63 interfaces \aprox
@@ -264,299 +263,58 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <7> on input line 4.
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <5> on input line 4.
-
-! LaTeX Error: Something's wrong--perhaps a missing \item.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.5 \item 9
-           5 interfaces \aprox $2^7 = 128 $
-? 
-
-! LaTeX Error: Something's wrong--perhaps a missing \item.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.5 \item 9
-           5 interfaces \aprox $2^7 = 128 $
-? 
-
-! LaTeX Error: Something's wrong--perhaps a missing \item.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.5 \item 9
-           5 interfaces \aprox $2^7 = 128 $
-? 
 ! Undefined control sequence.
 l.5 \item 95 interfaces \aprox
                                $2^7 = 128 $
-? 
-
-! LaTeX Error: Something's wrong--perhaps a missing \item.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.6 \item 1
-           6 interfaces \aprox $2^4 = 16 $
-? 
-
-! LaTeX Error: Something's wrong--perhaps a missing \item.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.6 \item 1
-           6 interfaces \aprox $2^4 = 16 $
-? 
-
-! LaTeX Error: Something's wrong--perhaps a missing \item.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.6 \item 1
-           6 interfaces \aprox $2^4 = 16 $
 ? 
 ! Undefined control sequence.
 l.6 \item 16 interfaces \aprox
                                $2^4 = 16 $
 ? 
 
-! LaTeX Error: Something's wrong--perhaps a missing \item.
+! Package enumitem Error: N\IeC {\"a}tmasker: undefined.
 
-See the LaTeX manual or LaTeX Companion for explanation.
+See the enumitem package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.7 \end{enumerate}
-                   
+l.11 \begin{enumerate}[ Nätmasker:]
+                                    
 ? 
 
-! LaTeX Error: Something's wrong--perhaps a missing \item.
+! Package enumitem Error: IP adress: undefined.
 
-See the LaTeX manual or LaTeX Companion for explanation.
+See the enumitem package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.12 \item $
-            32-6=26$
+l.21 \begin{enumerate}[ IP adress:]
+                                   
 ? 
 
-! LaTeX Error: Something's wrong--perhaps a missing \item.
+Overfull \hbox (5.22617pt too wide) in paragraph at lines 22--25
+[]\T1/cmr/m/n/10 223.1.17. 10xx xx-xx : 64 uni-ka m�j-li-ga sub-n�ts adres-ser,
+ d�r 223.1.17.128/26
+ []
 
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.12 \item $
-            32-6=26$
-? 
 
-! LaTeX Error: Something's wrong--perhaps a missing \item.
+Overfull \hbox (0.5051pt too wide) in paragraph at lines 25--29
+[]\T1/cmr/m/n/10 223.1.17. 0xxx xx-xx : 128 uni-ka m�j-li-ga sub-n�ts adres-ser
+, d�r 223.1.17.0/25
+ []
 
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.12 \item $
-            32-6=26$
-? 
 
-! LaTeX Error: Something's wrong--perhaps a missing \item.
+Overfull \hbox (4.67075pt too wide) in paragraph at lines 29--32
+[]\T1/cmr/m/n/10 223.1.17. 1100 xx-xx : 16 uni-ka m�j-li-ga sub-n�ts adres-ser,
+ d�r 223.1.17.192/28
+ []
 
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.13 \item $
-            32-7=25$
-? 
-
-! LaTeX Error: Something's wrong--perhaps a missing \item.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.13 \item $
-            32-7=25$
-? 
-
-! LaTeX Error: Something's wrong--perhaps a missing \item.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.13 \item $
-            32-7=25$
-? 
-
-! LaTeX Error: Something's wrong--perhaps a missing \item.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.14 \item $
-            32-4=28$
-? 
-
-! LaTeX Error: Something's wrong--perhaps a missing \item.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.14 \item $
-            32-4=28$
-? 
-
-! LaTeX Error: Something's wrong--perhaps a missing \item.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.14 \item $
-            32-4=28$
-? 
-
-! LaTeX Error: Something's wrong--perhaps a missing \item.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.15 \end{enumerate}
-                    
-? 
-
-! LaTeX Error: Something's wrong--perhaps a missing \item.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.22 \item 2
-            23.1.17. 10xx xxxx : 64 unika möjliga subnäts adresser, där 2...
-
-? 
-
-! LaTeX Error: Something's wrong--perhaps a missing \item.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.22 \item 2
-            23.1.17. 10xx xxxx : 64 unika möjliga subnäts adresser, där 2...
-
-? 
-
-! LaTeX Error: Something's wrong--perhaps a missing \item.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.22 \item 2
-            23.1.17. 10xx xxxx : 64 unika möjliga subnäts adresser, där 2...
-
-? 
-
-! LaTeX Error: Something's wrong--perhaps a missing \item.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.25 \item 2
-            23.1.17. 0xxx xxxx : 128 unika möjliga subnäts adresser, där ...
-
-? 
-
-! LaTeX Error: Something's wrong--perhaps a missing \item.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.25 \item 2
-            23.1.17. 0xxx xxxx : 128 unika möjliga subnäts adresser, där ...
-
-? 
-
-! LaTeX Error: Something's wrong--perhaps a missing \item.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.25 \item 2
-            23.1.17. 0xxx xxxx : 128 unika möjliga subnäts adresser, där ...
-
-? 
-
-! LaTeX Error: Something's wrong--perhaps a missing \item.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.29 \item 2
-            23.1.17. 1100 xxxx : 16 unika möjliga subnäts adresser, där 2...
-
-? 
-
-! LaTeX Error: Something's wrong--perhaps a missing \item.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.29 \item 2
-            23.1.17. 1100 xxxx : 16 unika möjliga subnäts adresser, där 2...
-
-? 
-
-! LaTeX Error: Something's wrong--perhaps a missing \item.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.29 \item 2
-            23.1.17. 1100 xxxx : 16 unika möjliga subnäts adresser, där 2...
-
-? 
-
-! LaTeX Error: Something's wrong--perhaps a missing \item.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.32 \end{enumerate}
-                    
-? 
 ) (./u2.tex) (./u3.tex) (/usr/share/texlive/texmf-dist/tex/latex/tools/.tex
 File ignored)
 ! Argument of \@sect has an extra }.
 <inserted text> 
                 \par 
-l.17 \input
+l.18 \input
            {u4.tex}
 ? 
 Runaway argument?
@@ -564,27 +322,27 @@ Runaway argument?
 ! Paragraph ended before \@sect was complete.
 <to be read again> 
                    \par 
-l.17 \input
+l.18 \input
            {u4.tex}
 ? 
 [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] (./samling.aux) ) 
 Here is how much of TeX's memory you used:
- 3464 strings out of 492609
- 52064 string characters out of 6131461
- 127691 words of memory out of 5000000
- 7359 multiletter control sequences out of 15000+600000
+ 3791 strings out of 492609
+ 57662 string characters out of 6131461
+ 136208 words of memory out of 5000000
+ 7680 multiletter control sequences out of 15000+600000
  6722 words of font info for 18 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 41i,4n,38p,274b,129s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 41i,4n,38p,274b,171s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/sha
 re/texmf/fonts/enc/dvips/cm-super/cm-super-t1.enc}</usr/share/texlive/texmf-dis
 t/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts
 /type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/p
 ublic/amsfonts/cm/cmsy10.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx
 1440.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1000.pfb>
-Output written on samling.pdf (1 page, 58589 bytes).
+Output written on samling.pdf (1 page, 57903 bytes).
 PDF statistics:
  29 PDF objects out of 1000 (max. 8388607)
  20 compressed objects within 1 object stream
