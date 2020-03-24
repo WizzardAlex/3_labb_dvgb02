@@ -1,13 +1,25 @@
 \section{Uppgift 4}
+\\ $R_1$ = routern närmast A
+\\ $R_2$ = routern närmast F
+
 \paragraph{Alla ARP-tabeller uppdaterade:}
 \begin{enumerate}
-    \item A kollar upp F's MAC-adress i sin tabell efter F's IP-adress.
-    \item A skickar paketet med F's MAC-adress som destination.
-    \item Paketet routas genom nätverket till F.
+    \item A skapar ett IP datagram med IP källa A, och deistination F.
+    \item A skapar ett länk lager 'frame' med $R_1$ MAC-adress som destinations adressen.
+    \item 'Frame:et' skickas till $R_1$, det mottags och datagrammet borttags.
+    \item $R_1$ framför datagrammet med IP-källa A, destination F, samt skapar länk-lagret
+	'frame' med $R_2$ MAC-adress som destinations address och sänder det vidare.
+    \item $R_2$ mottager 'Frame:et', datagrammet borttags, framför datagrammet med IP-källa
+	A, destination F, samt skapar länk-lagret 'frame' med F's MAC-adress som
+	destination och sänder det vidare.
+    \item F mottager 'frame:et' med IP-paketet.
+
 \end{enumerate}
 \paragraph{A's ARP-tabell är tom:}
 \begin{enumerate}
-    \item A broadcastar en ARP-query med F's IP-adress vilket alla i nätverket mottager.
-    \item F skickar ett svar med sin MAC-adress till A.
+    \item A broadcastar ett ARP-query packet med F's IP-adress.
+    \item $R_1$ broadcastar det vidare.
+    \item $R_2$ broadcastar det vidare.
+    \item F skickar tillbacks till $R_2$ 
     \item A's tabell uppdateras med F's MAC-adress och det föregående scenariot utspelas.
 \end{enumerate}

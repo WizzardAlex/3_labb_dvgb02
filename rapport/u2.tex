@@ -1,7 +1,40 @@
 \section{Uppgift 2}
 \paragraph{}
-Ett UDP datagram har en header-längd på 16-bits (2 bytes). 
-Med ett MTU på 1024 bytes, och UDP header längd på 2 bytes, så blir data payloaden 
-$1024-2=1022$ bytes lång. Därav delas datan upp i 1022 bytes delar, $ frac{3500}{1022}\aprox 3.4 $
-vilket ger att datan måste delas upp i 4 delar, dem tre första blir 1022 bytes långa och den fjärde 
-($ 3500 - 1022*3 = 434 $) blir 434 bytes lång.
+%Ett UDP datagram har en header-längd på 16-bits (2 bytes). \\
+%Med ett MTU på 1024 bytes, och UDP header längd på 8 bytes, samt IP-headern är 20 bytes, så blir data payloaden 
+%$1024-28=996$ bytes lång. \\\\Därav delas datan upp i 996 bytes delar där resten blir det sista
+%packetet, $ \frac{3500}{996} \approx 3.5 $ \\\\
+%vilket ger att datan måste delas upp i 4 delar, dem tre första blir 996 bytes långa och den fjärde 
+% ($ 3500 - 996*3 = 512 $)  blir 512 bytes lång.
+
+\begin{center}
+\begin{tabular}{c|c} 
+ Name & Length [bytes]\\ 
+ \hline
+ IP-header & 20 \\ 
+ MTU & 1024 \\ 
+ Packet & 3500 \\ 
+\end{tabular}
+\end{center}
+\\
+
+\\ Packet length - IP-header = $ 3500 - 20 = 3480 $
+\\ $ 1024 - 20 = 1004 $
+\\ då 1004 ej delbart med 8 så delas upp payloaden i 1000 bytes delar istället.
+\\ offset nummer $ \frac{1000}{8} = 125 $
+\\ $ 3480 - 3* 1000 = 480 $
+\\ \\
+
+\begin{center}
+\begin{tabular}{c|c|c|c} 
+
+ Length[bytes] & ID &  fragflag & offset \\ 
+ \hline
+ 1020 & x & 1 & 0 \\ 
+ 1020 & x & 1 & 125 \\ 
+ 1020 & x & 1 & 250 \\ 
+ 500 & x & 0 & 375 \\ 
+\end{tabular}
+\end{center}
+\\
+$3*1000 + 480 = 3480$
