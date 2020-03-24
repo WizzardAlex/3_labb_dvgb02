@@ -4,22 +4,34 @@
 
 \paragraph{Alla ARP-tabeller uppdaterade:}
 \begin{enumerate}
-    \item A skapar ett IP datagram med IP källa A, och deistination F.
+    \item A skapar ett IP datagram med IP källa A, och destination F.
     \item A skapar ett länk lager 'frame' med $R_1$ MAC-adress som destinations adressen.
     \item 'Frame:et' skickas till $R_1$, det mottags och datagrammet borttags.
     \item $R_1$ framför datagrammet med IP-källa A, destination F, samt skapar länk-lagret
 	'frame' med $R_2$ MAC-adress som destinations address och sänder det vidare.
-    \item $R_2$ mottager 'Frame:et', datagrammet borttags, framför datagrammet med IP-källa
-	A, destination F, samt skapar länk-lagret 'frame' med F's MAC-adress som
-	destination och sänder det vidare.
+%    \item $R_2$ mottager 'Frame:et', datagrammet borttags, vidarebefodrar datagrammet med IP-källa
+%	A, destination F, samt skapar länk-lagret 'frame' med F's MAC-adress som
+%	destination och sänder det vidare.
+    \item $R_2$ mottager frame:en, kollar upp MAC-adressen i sin tabell och vidarebefodrar
+	paketet till F. 
     \item F mottager 'frame:et' med IP-paketet.
 
 \end{enumerate}
 \paragraph{A's ARP-tabell är tom:}
 \begin{enumerate}
-    \item A broadcastar ett ARP-query packet med F's IP-adress.
-    \item $R_1$ broadcastar det vidare.
-    \item $R_2$ broadcastar det vidare.
-    \item F skickar tillbacks till $R_2$ 
-    \item A's tabell uppdateras med F's MAC-adress och det föregående scenariot utspelas.
+    \item A skickar ett ARP-query packet med F's IP-adress, samt med destinations
+	MAC-adressen FF-FF-FF-FF-FF-FF.
+    \item $R_1$ broadcastar ARP-query packetet med F's IP.
+    \item $R_2$ broadcastar ARP-query packetet med F's IP.
+    \item  F mottager ARP packetet, därefter sänder tillbaks ARP-packetet med dess egna MAC
+	adress (unicast) till $R_2$.
+    \item $R_2$ lägger till F's Mac adress, dess IP-adress samt TTL i ARP-tabellen, därefter unicastar den
+	ARP packetet med dess $R_2$ MAC adress till $R_1$
+
+    \item $R_1$ lägger till $R_2$ som interface, med F's IP-adress, F's MAC adres samt TTL i ARP-tabellen, därefter unicastar den
+	ARP packetet med dess $R_2$ MAC adress till A
+    \item A mottager ARP-packetet, uppdaterar dess ARP-tabell med $R_1$ som interface, med F's
+	IP-adress och MAC adress samt TTL i ARP-tabellen.
+
+    \item Nu när ARP-tabellen är uppdaterad med F's information så utspelas det första scenariot.
 \end{enumerate}
