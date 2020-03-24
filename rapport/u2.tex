@@ -1,3 +1,7 @@
 \section{Uppgift 2}
 \paragraph{}
-Ett UDP datagram har en header-längd på 16-bits (2 bytes). Dom 3 första paketen får då längden 1024 bytes och det fjärde paketet får längden 476 bytes. 
+Ett UDP datagram har en header-längd på 16-bits (2 bytes). 
+Med ett MTU på 1024 bytes, och UDP header längd på 2 bytes, så blir data payloaden 
+$1024-2=1022$ bytes lång. Därav delas datan upp i 1022 bytes delar, $ frac{3500}{1022}\aprox 3.4 $
+vilket ger att datan måste delas upp i 4 delar, dem tre första blir 1022 bytes långa och den fjärde 
+($ 3500 - 1022*3 = 434 $) blir 434 bytes lång.
