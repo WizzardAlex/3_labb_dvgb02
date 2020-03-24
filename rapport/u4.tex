@@ -7,7 +7,7 @@
     \item A skapar ett IP datagram med IP källa A, och destination F.
     \item A skapar ett länk lager 'frame' med $R_1$ MAC-adress som destinations adressen.
     \item 'Frame:et' skickas till $R_1$, det mottags och datagrammet borttags.
-    \item $R_1$ framför datagrammet med IP-källa A, destination F, samt skapar länk-lagret
+    \item $R_1$ vidarebefodrar datagrammet med IP-källa A, destination F, samt skapar länk-lagret
 	'frame' med $R_2$ MAC-adress som destinations address och sänder det vidare.
 %    \item $R_2$ mottager 'Frame:et', datagrammet borttags, vidarebefodrar datagrammet med IP-källa
 %	A, destination F, samt skapar länk-lagret 'frame' med F's MAC-adress som
@@ -33,5 +33,5 @@
     \item A mottager ARP-packetet, uppdaterar dess ARP-tabell med $R_1$ som interface, med F's
 	IP-adress och MAC adress samt TTL i ARP-tabellen.
 
-    \item Nu när ARP-tabellen är uppdaterad med F's information så utspelas det första scenariot.
+    \item Nu när ARP-tabellen är uppdaterad med F's information så utspelas det första scenariot där A's tabell är uppdaterad.
 \end{enumerate}
